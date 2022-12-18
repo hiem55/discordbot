@@ -1,9 +1,8 @@
 import discord
 import re
-
-TOKEN = "OTc4MDgzNzIyNDc1NzQ5Mzg2.GTPmgi.a0CrGadvFKAaAM3lRLgykADYrnf3tBYlInKoN4";
+import os
 client = discord.Client()
-
+TOKEN = os.getenv('DISCORD_TOKEN')
 def vtuber(msg):
     is_vtuber = False
     false_positive = None
