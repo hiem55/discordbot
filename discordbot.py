@@ -1,18 +1,13 @@
-import discord
 import re
 import os
-client = discord.Client()
+from discord.ext import commands
+
+bot = commands.Bot(command_prefix='$')
 TOKEN = os.getenv('DISCORD_TOKEN')
-def vtuber(msg):
-    is_vtuber = False
-    false_positive = None
-    check_message = re.sub(r"[^a-zA-Z0-9]+", ' ', msg.lower())
 
-    for vtuber in vtubers:
-        if vtuber in check_message:
-            if is_vtuber:
-                check_message = false_positive
-            
+@bot.event
+async def on_ready():
+    print("We are logged in as {0.user}!".format(bot))
 
 
 
@@ -30,9 +25,9 @@ def vtuber(msg):
 
 
 
-vtubers = set()
 
 
-@client.event
 
-client.run(TOKEN)
+
+
+bot.run(TOKEN)
