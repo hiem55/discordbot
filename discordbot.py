@@ -9,7 +9,13 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 async def on_ready():
     print("We are logged in as {0.user}!".format(bot))
 
-
+@bot.event
+async def on_message(message):
+    if message.author == bot.user:
+        return
+    
+    if message.content.startswith('$hello'):
+        await message.channel.send('Hello!')
 
 
 
