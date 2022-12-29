@@ -69,9 +69,9 @@ regions = ['na', 'euw', 'eune', 'oce', 'kr',
 
 @bot.command(brief='Teamfight Tactics')
 async def tftstat(ctx, region, *, username):
-    if region in regions:
+    if region.lower() in regions:
         region = region
-    if region not in regions:
+    if region.lower() not in regions:
         await ctx.send('wrong region, check .help')
         return
 
@@ -83,9 +83,9 @@ async def tftstat(ctx, region, *, username):
 
 @bot.command(aliases=['leaguestat'], brief='League of Legends')
 async def lolstat(ctx, region, *, username):
-    if region in regions:
+    if region.lower() in regions:
         region = region
-    if region not in regions:
+    if region.lower() not in regions:
         await ctx.send('wrong region, check .help')
         return
     username = username.replace(' ', '%20')
