@@ -11,11 +11,18 @@ intents = discord.Intents.default()  # All but the THREE privileged ones
 intents.message_content = True  # Subscribe to the Message Content intent
 
 bot = commands.Bot(command_prefix='.', intents=intents, case_insensitive=True)
+cogs = ["events.on_message"]
 
 
 @bot.event
 async def on_ready():
     print("We are logged in as {0.user}!".format(bot))
+    for cog in cogs:
+        try:
+            bot.load_extension(cog)
+            print(f"{cog} was loaded successfully.")
+        except Exception as e:
+            print(e)
 
 
 @bot.event
