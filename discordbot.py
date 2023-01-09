@@ -71,7 +71,7 @@ Teamfight Tactics      .tftstat <username>                     .tftstat hiem5
     )
 
 regions = ['na', 'euw', 'eune', 'oce', 'kr',
-           'jp', 'br', 'las', 'lan', 'ru', 'tr']
+           'jp', 'br', 'las', 'lan', 'ru', 'tr', 'sg']
 
 
 @bot.command(brief='Teamfight Tactics')
