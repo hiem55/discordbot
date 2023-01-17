@@ -13,6 +13,7 @@ intents.message_content = True  # Subscribe to the Message Content intent
 bot = commands.Bot(command_prefix='.', intents=intents, case_insensitive=True)
 cogs = ["events.on_message"]
 
+#send message in console if bot is ready and logged in successfully
 
 @bot.event
 async def on_ready():
@@ -60,6 +61,7 @@ async def on_command_error(ctx, error):
     For more help, type `.help {ctx.command.name}` or `.statcommands`'''
         )
 
+#help commands for stat commands
 
 @bot.command(name='statcommands', aliases=['commands'], brief='Show list of command', pass_context=True)
 async def statcommands(ctx):
@@ -69,6 +71,8 @@ League of Legends      .lolstat <username>                     .lolstat hiem5
 Teamfight Tactics      .tftstat <username>                     .tftstat hiem5
 ```"""
     )
+
+#possible regions supported by Riot
 
 regions = ['na', 'euw', 'eune', 'oce', 'kr',
            'jp', 'br', 'las', 'lan', 'ru', 'tr', 'sg']
